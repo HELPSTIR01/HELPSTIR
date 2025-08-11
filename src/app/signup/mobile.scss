@@ -1,0 +1,28 @@
+@media only screen and (max-width: 768px) {
+  .registration-container {
+    padding: 40px 0px !important;
+    &.step2 {
+      max-width: 100%;
+      overflow: scroll;
+      .flex-mid {
+        max-width: 90%;
+        .form-grid {
+          max-width: 90% !important;
+          .form-input {
+            width: 300px;
+            margin: 20px;
+          }
+        }
+      }
+    }
+    .submit-button-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      width: 90%;
+      padding: 12px;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+// timelineStep.scss
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 500;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 180px;
+        height: 2px;
+        background: #0066ff;
+        margin-top: 4px;
+        margin-left: auto;
+      }
+    }
+  }
+  
+  .timeline-step {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 4rem;
+  
+    .step-number {
+      position: absolute;
+      left: 0;
+      color: #0066ff;
+      font-size: 1.1rem;
+      
+      &::before {
+        content: attr(class);
+        color: #666;
+        margin-right: 0.5rem;
+      }
+    }
+  
+    .step-content {
+      flex: 1;
+      
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+  
+      p {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  
+    .dotted-line {
+      position: absolute;
+      left: 2rem;
+      top: 3rem;
+      bottom: -2rem;
+      width: 2px;
+      background-image: url("../../../../public/images/icons/DottedLineTimeline.svg");
+      background-repeat: repeat-y;
+    }
+  }

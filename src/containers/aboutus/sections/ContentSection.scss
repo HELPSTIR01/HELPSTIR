@@ -1,0 +1,99 @@
+.about-section.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #f2f0f0;
+  text-align: center;
+  padding: 40px 20px;
+  height: 724px;
+  position: relative;
+  background-image: url("../../../../public/images/AboutUsPageHeaderBelowImage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  .content-section__text {
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 35.84px;
+      margin: 0 0 40px 0; // Added bottom margin;
+    }
+    // Create a separate layer for the background with blur and shadow
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      opacity: 0.75;
+      filter: blur(3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: -1;
+      -webkit-filter: blur(3px);
+    }
+
+    &__text {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 30px 0; // Added top and bottom margin
+        color: pink;
+        line-height: 27.28px;
+      }
+
+      span {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 20px 0; // Added top and bottom margin
+        color: white;
+        line-height: 27.28px;
+        display: block; // Added to ensure margins work properly
+      }
+    }
+  }
+  .cta-button {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 16px 0;
+
+    &.dark {
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+
+      &:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+        -webkit-transform: translateY(-2px);
+        -moz-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+        -o-transform: translateY(-2px);
+      }
+    }
+
+    &:not(.dark) {
+      background-color: white;
+      color: #0080ff;
+      border: 2px solid #1a1a1a;
+
+      &:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

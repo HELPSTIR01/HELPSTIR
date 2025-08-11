@@ -1,0 +1,26 @@
+$primary: #1e1e1e; // This is now a dark gray color
+
+// Other color variables
+$secondary: #4a4a4a;
+$background: #f5f5f5;
+$text-color: #333333;
+$border-color: #dddddd;
+$error-color: #ff3860;
+$background-hover: #e8e8e8;
+$background-selected: #d4d4d4;
+$primary-color: #0080ff;
+$secondary-color: #ff1a37;
+$background-color: #f8f9fa;
+$text-color: #1e1e1e;
+$accent-color: #48bb78;
+
+@mixin font-size($size, $weight) {
+  font-size: $size * 1px;
+  font-weight: $weight;
+  line-height: $size * 1.5 * 1px;
+}
+
+$primary: #1e1e1e;
+$background: #f5f5f5;
+$text-color: #333333;
+$border-color: #dddddd;

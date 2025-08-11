@@ -1,0 +1,204 @@
+@import "../../Theme/variable.scss";
+
+.stepper-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  min-height: 500px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .stepper-wrapper {
+    width: 100%;
+  }
+}
+.stepper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 30px 0;
+  position: relative;
+  margin: 0 auto;
+
+  &__step {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 120px; // Increased space between steps for longer connector
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--completed {
+      .stepper__indicator {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+        transform: scale(1.05);
+      }
+
+      .stepper__connector {
+        &::before {
+          background: linear-gradient(
+            to right,
+            transparent 0%,
+            $primary 20%,
+            $primary 80%,
+            transparent 100%
+          );
+        }
+      }
+
+      .stepper__label {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+
+    &--active {
+      .stepper__indicator {
+        background-color: white;
+        border-color: $primary;
+        color: $primary;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba($primary, 0.1);
+      }
+
+      .stepper__label {
+        font-weight: 600;
+        color: $primary;
+      }
+    }
+  }
+
+  &__indicator {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $background;
+    border: 2.5px solid $border-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-color;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: 16px; // Space between number and label
+  }
+
+  &__connector {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 20px); // Start after the label
+    width: 100px; // Longer connector line
+    height: 20px; // Increased height for gradient container
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 20px;
+      height: 1px; // Thinner line
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        $border-color 20%,
+        $border-color 80%,
+        transparent 100%
+      );
+      transform: translateY(-50%);
+      justify-content: flex-start;
+      width: 100%;
+      position: relative;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &__number {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #64748b;
+        margin-right: 12px;
+      }
+
+      &__label {
+        font-size: 14px;
+        color: #64748b;
+      }
+
+      &__connector {
+        width: 120px;
+        height: 1px;
+        background-color: #e2e8f0;
+        margin: 0 24px;
+        transition: background-color 0.3s ease;
+
+        &--active {
+          background-color: #2196f3;
+        }
+      }
+
+      &--active {
+        .step__number {
+          border-color: #2196f3;
+          color: #2196f3;
+        }
+
+        .step__label {
+          color: #2196f3;
+          font-weight: 500;
+        }
+      }
+
+      &--completed {
+        .step__number {
+          background-color: #2196f3;
+          border-color: #2196f3;
+          color: white;
+        }
+
+        .step__connector {
+          background-color: #2196f3;
+        }
+      }
+    }
+
+    .step-content {
+      width: 100%;
+      max-width: 800px;
+      margin: 60px auto 0;
+      padding: 40px 60px;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      min-height: 300px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

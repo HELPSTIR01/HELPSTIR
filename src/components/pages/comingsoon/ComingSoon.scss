@@ -1,0 +1,140 @@
+@import "../../../Theme/variable.scss";
+
+.helpstir-coming-soon {
+  background-color: $background-color;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.coming-soon__container {
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  text-align: center;
+}
+
+.coming-soon__header {
+  margin-bottom: 2rem;
+
+  .coming-soon__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $text-color;
+
+    .title-highlight {
+      color: $primary-color;
+    }
+  }
+
+  .coming-soon__subtitle {
+    color: $secondary-color;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.coming-soon__user-profile,
+.coming-soon__mission,
+.coming-soon__account-manager {
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .user-profile__details,
+  .account-manager__details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .profile-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .detail-icon {
+      color: $primary-color;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+    }
+
+    h3 {
+      margin: 0;
+      color: $text-color;
+      font-size: 0.9rem;
+    }
+
+    p {
+      margin: 0;
+      color: darken($text-color, 10%);
+      font-weight: 500;
+    }
+  }
+}
+
+.coming-soon__mission {
+  .mission-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .mission-section {
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          background-color: lighten($primary-color, 40%);
+          color: $text-color;
+          padding: 0.5rem;
+          margin-bottom: 0.5rem;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .bio-section {
+    h3 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      background-color: #e9ecef;
+      padding: 1rem;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+  }
+}

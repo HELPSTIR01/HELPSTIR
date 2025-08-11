@@ -1,0 +1,39 @@
+@media only screen and (max-width: 768px) {
+  .landing-container {
+    padding: 20px 0;
+    .helpstir-timer {
+      padding: 0 20px;
+    }
+    .content-section {
+      gap: 8px;
+      flex-direction: column;
+
+      hr {
+        display: none;
+      }
+      .separator {
+        height: 2px;
+        width: 90%;
+        border-bottom: 0.4px solid black;
+      }
+    }
+    .subtext {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .signup-text {
+      margin: 12px auto 24px;
+    }
+  }
+  .right-section {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .cta-button {
+    width: 90%;
+  }
+}

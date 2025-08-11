@@ -1,0 +1,68 @@
+section.helpstir-works {
+  background-color: rgba(240, 236, 232, 1);
+  padding: 42px 30px;
+  text-align: center;
+  span.header {
+    margin-bottom: 32px;
+    font-size: 34px;
+    b {
+      font-weight: 600;
+    }
+  }
+  .footprints {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    .step {
+      display: grid;
+      gap: 0px;
+      grid-template-columns: 3fr 1fr;
+
+      grid-template-areas:
+        "title step"
+        "body step"
+        "dividor dividor";
+
+      &:nth-last-of-type(even) {
+        grid-template-areas:
+          "step title"
+          "step body"
+          "dividor dividor";
+        grid-template-columns: 1fr 3fr;
+        &::after {
+          transform: rotateX(180deg);
+        }
+      }
+
+      span.stepper {
+        grid-area: step;
+        font-size: 16px;
+        align-self: center;
+        justify-self: center;
+        i {
+          font-size: 36px;
+          color: #0080ff;
+        }
+      }
+      span.title {
+        grid-area: title;
+        font-size: 24px;
+      }
+      p.body {
+        grid-area: body;
+      }
+      &::after {
+        content: " ";
+        grid-area: dividor;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../../public/images/beeline.svg");
+        min-height: 30px;
+      }
+      &:last-of-type::after {
+        display: none;
+      }
+    }
+  }
+}

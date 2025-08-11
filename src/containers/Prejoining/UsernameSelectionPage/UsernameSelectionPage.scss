@@ -1,0 +1,85 @@
+.username-page {
+    min-height: 100vh;
+    padding: 24px;
+    background: linear-gradient(135deg, #ffd6cc, #f2e6ff, #e6f0ff);
+    display: flex;
+    flex-direction: column;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+  
+      .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+  
+        .highlight {
+          color: #007bff;
+        }
+      }
+  
+      .skip-button {
+        background: none;
+        border: none;
+        color: #333;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 8px 16px;
+        transition: opacity 0.3s;
+  
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 16px;
+      gap: 24px;
+  
+      .creative-section {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+  
+        .icon {
+          font-size: 1.5rem;
+        }
+  
+        .text {
+          font-size: 1.2rem;
+          color: #333;
+        }
+      }
+  
+      .title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: #333;
+        text-align: center;
+        margin: 0;
+      }
+  
+      .input-section {
+        width: 100%;
+        max-width: 480px;
+      }
+  
+      .submit-section {
+        margin-top: 40px;
+      }
+    }
+  }

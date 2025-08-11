@@ -1,0 +1,190 @@
+.congratulations-screen {
+  min-height: 100vh;
+  background: rgb(80, 76, 76);
+
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; // Prevents scrolling beyond the viewport
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../../../public/images/congrats-bg.svg");
+  background-repeat: no-repeat;
+
+  .header {
+    display: flex;
+    align-items: center; /* Align items in the center vertically */
+    justify-content: center; /* Center horizontally */
+    gap: 1rem; /* Space between tick mark and text */
+    padding: 2rem;
+    text-align: left; /* Align text properly */
+
+    .checkmark-circle {
+      width: 60px;
+      height: 60px;
+      background: white;
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0; /* Prevent shrinking */
+      position: relative; /* For pseudo-element positioning */
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+        animation: pulse 2s infinite;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        path {
+          stroke: #00ff00;
+          stroke-width: 3;
+        }
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      70% {
+        transform: scale(1.1);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      p {
+        margin: 0.3rem 0 0;
+        color: #cccccc;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 100vw;
+
+    .countdown-timer {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+
+      .successMessage {
+        color: #fff;
+
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132%; /* 26.4px */
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+      text-align: left;
+      max-width: 400px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .communities {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      p {
+        margin: 0;
+        white-space: nowrap;
+        color: #cccccc;
+        text-align: center;
+        width: 100%;
+      }
+
+      .social-icons {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        align-self: flex-start; /* This aligns the social icons container to the left */
+
+        a {
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+
+    .glass-card {
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+}

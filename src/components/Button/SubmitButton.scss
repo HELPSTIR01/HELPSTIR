@@ -1,0 +1,45 @@
+.submit-button-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  
+    .button-text {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 400;
+    }
+  
+    .circle-button {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #808080;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+  
+      .arrow {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+  
+      &:hover {
+        background-color: #666;
+        transform: scale(1.05);
+      }
+  
+      &:active {
+        transform: scale(0.95);
+      }
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
